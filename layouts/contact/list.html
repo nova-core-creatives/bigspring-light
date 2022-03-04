@@ -7,18 +7,19 @@
       <div class="col-lg-7 mb-4 mb-lg-0">
         <form action="{{ site.Params.contact_form_action | safeURL }}" method="POST"
           name="contact"
-          netlify-honeypot="bot-field"
+          action="https://submit-form.com/4cgLLJK7"
+          netlify-honeypot="subject"
           data-netlify="true"
           data-netlify-recaptcha="true"
           netlify>
-          <p style="display:none;">
-            <label>
-              Don’t fill this out if you’re human: <input name="bot-field" />
-            </label>
-          </p>
+          <input
+           type="hidden"
+           name="_redirect"
+           value="https://i-repair-gunnison.netlify.app/success"
+         />
           <input type="text" class="form-control mb-3" id="name" name="name" placeholder="{{ i18n `yourname` }}">
-          <input type="email" class="form-control mb-3" id="mail" name="mail" placeholder="{{ i18n `youremail` }}">
-          <input type="text" class="form-control mb-3" id="subject" name="subject" placeholder="{{ i18n `subject` }}">
+          <input type="email" class="form-control mb-3" id="email" name="email" placeholder="{{ i18n `youremail` }}">
+          <input style ="display:none;" type="text" class="form-control mb-3" id="subject" name="subject" placeholder="{{ i18n `subject` }}">
           <textarea name="message" id="message" class="form-control mb-3" placeholder="{{ i18n `yourmessage` }}"></textarea>
           <div data-netlify-recaptcha="true"></div>
           <button type="submit" value="send" class="btn btn-primary">{{ i18n `sendnow` }}</button>
