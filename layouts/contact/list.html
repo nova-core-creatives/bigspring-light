@@ -23,6 +23,8 @@
           <textarea name="message" id="message" class="form-control mb-3" placeholder="{{ i18n `yourmessage` }}"></textarea>
           <div data-netlify-recaptcha="true"></div>
           <button type="submit" value="send" class="btn btn-primary">{{ i18n `sendnow` }}</button>
+          <input type="hidden" name="_email.subject" value="You have a new message!" />
+          <input type="hidden" name="_email.from" value="iRepair Gunnison" />
         </form>
       </div>
 
